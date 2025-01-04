@@ -32,7 +32,7 @@ public class VoltageDividerTester {
         TOLERANCE2
       );
 
-      System.out.printf("VoltageDivider - %2d\n", i);
+      System.out.printf("VoltageDivider - %3d\n", i);
       System.out.printf(
         "ActualResistance1 - %.2f , ActualResistance2 - %.2f\n",
         resistor1.getActualResistance(),
