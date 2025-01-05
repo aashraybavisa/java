@@ -21,20 +21,20 @@ public class Resistor {
    * @return double
    */
   public double getNominalResistance() {
-    return nominalResistance;
+    return this.nominalResistance;
   }
 
   /**
    * @return double
    */
   public double getTolerance() {
-    return tolerance;
+    return this.tolerance;
   }
 
   /**
    * @return double
    */
   public double getActualResistance() {
-    return actualResistance;
+    return this.actualResistance;
   }
 }
