@@ -7,11 +7,8 @@ package DSA;
 //  @since: Jan 19, 2025
 //  @status: Solved
 
-import static java.lang.Math.*;
 
-import java.awt.Point;
 import java.io.*;
-import java.math.BigInteger;
 import java.util.*;
 
 public class CF_2051C_Preparing_for_the_Exam implements Runnable {
