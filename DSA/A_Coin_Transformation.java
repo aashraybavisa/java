@@ -5,11 +5,7 @@ package DSA;
 //  @since: Dec 24, 2024
 //  @status: Solved
 
-import static java.lang.Math.*;
-
-import java.awt.Point;
 import java.io.*;
-import java.math.BigInteger;
 import java.util.*;
 
 public class A_Coin_Transformation implements Runnable {
