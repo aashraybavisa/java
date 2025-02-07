@@ -1,61 +1,5 @@
 package Assessments.CISCO;
 
-import java.util.*;
-import java.util.regex.*;
-
-public class Q1_FY23 {
-
-  public static String[] funcValidPairs(String[] inputStr) {
-    String[] answer = new String[inputStr.length];
-    for (int i = 0; i < inputStr.length; i++) {
-      String pair = inputStr[i];
-      if (isValidPair(pair)) {
-        answer[i] = "Valid";
-      } else {
-        answer[i] = "Invalid";
-      }
-    }
-    return answer;
-  }
-
-  private static boolean isValidPair(String pair) {
-    // Regular expression to match the pattern
-    String regex =
-      "^\\(([-+]?)(90(\\.0+)?|[1-8]?\\d(\\.\\d+)?),([-+]?)(180(\\.0+)?|1[0-7]\\d(\\.\\d+)?|[1-9]?\\d(\\.\\d+)?)\\)$";
-    Pattern pattern = Pattern.compile(regex);
-    Matcher matcher = pattern.matcher(pair);
-    if (!matcher.matches()) {
-      return false;
-    }
-
-    // Extract latitude and longitude
-    String[] parts = pair.substring(1, pair.length() - 1).split(",");
-    double latitude = Double.parseDouble(parts[0]);
-    double longitude = Double.parseDouble(parts[1]);
-
-    // Check the range
-    return (
-      (latitude >= -90 && latitude <= 90) &&
-      (longitude >= -180 && longitude <= 180)
-    );
-  }
-
-  public static void main(String[] args) {
-    Scanner in = new Scanner(System.in);
-    // Input for inputStr
-    int inputStr_size = in.nextInt();
-    String[] inputStr = new String[inputStr_size];
-    for (int idx = 0; idx < inputStr_size; idx++) {
-      inputStr[idx] = in.next();
-    }
-
-    String[] result = funcValidPairs(inputStr);
-    for (int idx = 0; idx < result.length - 1; idx++) {
-      System.out.print(result[idx] + " ");
-    }
-    System.out.print(result[result.length - 1]);
-  }
-}
 //
 // ===========> Question
 // You are given a list of strings that may represent valid latitude/longitude pairs. Your task is to check if the given latitude/longitude pairs are valid or not.
@@ -120,3 +64,59 @@ public class Q1_FY23 {
 // 		System.out.print(result[result.length - 1]);
 // 	}
 // }
+import java.util.*;
+import java.util.regex.*;
+
+public class Q1_FY23 {
+
+  public static String[] funcValidPairs(String[] inputStr) {
+    String[] answer = new String[inputStr.length];
+    for (int i = 0; i < inputStr.length; i++) {
+      String pair = inputStr[i];
+      if (isValidPair(pair)) {
+        answer[i] = "Valid";
+      } else {
+        answer[i] = "Invalid";
+      }
+    }
+    return answer;
+  }
+
+  private static boolean isValidPair(String pair) {
+    // Regular expression to match the pattern
+    String regex =
+      "^\\(([-+]?)(90(\\.0+)?|[1-8]?\\d(\\.\\d+)?),([-+]?)(180(\\.0+)?|1[0-7]\\d(\\.\\d+)?|[1-9]?\\d(\\.\\d+)?)\\)$";
+    Pattern pattern = Pattern.compile(regex);
+    Matcher matcher = pattern.matcher(pair);
+    if (!matcher.matches()) {
+      return false;
+    }
+
+    // Extract latitude and longitude
+    String[] parts = pair.substring(1, pair.length() - 1).split(",");
+    double latitude = Double.parseDouble(parts[0]);
+    double longitude = Double.parseDouble(parts[1]);
+
+    // Check the range
+    return (
+      (latitude >= -90 && latitude <= 90) &&
+      (longitude >= -180 && longitude <= 180)
+    );
+  }
+
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    // Input for inputStr
+    int inputStr_size = in.nextInt();
+    String[] inputStr = new String[inputStr_size];
+    for (int idx = 0; idx < inputStr_size; idx++) {
+      inputStr[idx] = in.next();
+    }
+
+    String[] result = funcValidPairs(inputStr);
+    for (int idx = 0; idx < result.length - 1; idx++) {
+      System.out.print(result[idx] + " ");
+    }
+    System.out.print(result[result.length - 1]);
+  }
+}
